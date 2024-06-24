@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private Sphere regularSphere;
     private Sphere bigFastSphere;
 
+    public GameObject TitleScreen;
+
     void Start()
     {
         regularSphere = Instantiate(regularSpherePrefab, new Vector3(-2, 0, 0), Quaternion.identity).GetComponent<RegularSphere>();
@@ -27,5 +29,9 @@ public class GameManager : MonoBehaviour
         {
             bigFastSphere.Move(Vector3.forward);
         }
+    }
+
+    public void hideTitleScreen() {
+        TitleScreen.SetActive(false);
     }
 }
